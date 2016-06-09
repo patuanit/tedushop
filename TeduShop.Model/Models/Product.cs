@@ -26,7 +26,8 @@ namespace TeduShop.Model.Models
         [MaxLength(256)]
         public string Image { get; set; }
 
-        public XElement MoreImages { get; set; }
+        [Column(TypeName ="xml")]   //Kiểu dữ liệu XML
+        public string MoreImages { get; set; }
         public decimal Price { get; set; }
         public decimal? PromotionPrice { get; set; }
         public int? Warranty { get; set; }
