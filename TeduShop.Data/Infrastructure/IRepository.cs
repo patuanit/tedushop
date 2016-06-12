@@ -23,6 +23,7 @@ namespace TeduShop.Data.Infrastructure
         /// </summary>
         /// <param name="entity"></param>
         void Delete(T entity);
+        void Delete(int id);
 
         /// <summary>
         /// Xóa nhiều đối tượng

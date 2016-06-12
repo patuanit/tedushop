@@ -7,7 +7,7 @@ namespace TeduShop.Data.Repositories
 {
     //Định nghĩa thêm các phương thức chuyên biệt chỉ dành cho bảng ProductCategory mà không nằm trong danh sách các
     //thuộc tính đã được định nghĩa trong RepositoryBase (Add, Update, Delete...)
-    public interface IProductCategoryRepository
+    public interface IProductCategoryRepository : IRepository<ProductCategory>
     {
         IEnumerable<ProductCategory> GetByAlias(string alias);
     }
