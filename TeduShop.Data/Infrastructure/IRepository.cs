@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -10,7 +11,7 @@ namespace TeduShop.Data.Infrastructure
         /// Thêm mới 1 đối tượng
         /// </summary>
         /// <param name="entity"></param>
-        void Add(T entity);
+        T Add(T entity);
 
         /// <summary>
         /// Update thông tin 1 đối tượng
@@ -22,8 +23,8 @@ namespace TeduShop.Data.Infrastructure
         /// Xóa 1 đối tượng
         /// </summary>
         /// <param name="entity"></param>
-        void Delete(T entity);
-        void Delete(int id);
+        T Delete(T entity);
+        T Delete(int id);
 
         /// <summary>
         /// Xóa nhiều đối tượng
@@ -51,7 +52,7 @@ namespace TeduShop.Data.Infrastructure
         /// </summary>
         /// <param name="includes"></param>
         /// <returns></returns>
-        IQueryable<T> GetAll(string[] includes = null);
+        IEnumerable<T> GetAll(string[] includes = null);
 
         /// <summary>
         /// Lấy toàn bộ kèm điều kiện
@@ -59,7 +60,7 @@ namespace TeduShop.Data.Infrastructure
         /// <param name="predicate"></param>
         /// <param name="includes"></param>
         /// <returns></returns>
-        IQueryable<T> GetMulti(Expression<Func<T, bool>> predicate, string[] includes = null);
+        IEnumerable<T> GetMulti(Expression<Func<T, bool>> predicate, string[] includes = null);
 
         /// <summary>
         /// Lấy toàn bộ có phân trang
@@ -70,7 +71,7 @@ namespace TeduShop.Data.Infrastructure
         /// <param name="size"></param>
         /// <param name="includes"></param>
         /// <returns></returns>
-        IQueryable<T> GetMultiPaging(Expression<Func<T, bool>> filter, out int total, int index = 0, int size = 50, string[] includes = null);
+        IEnumerable<T> GetMultiPaging(Expression<Func<T, bool>> filter, out int total, int index = 0, int size = 50, string[] includes = null);
 
         /// <summary>
         /// Đếm số bản ghi
